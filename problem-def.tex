@@ -1,0 +1,21 @@
+\section{Problem Definition}
+Input: $G=(V, E)$, and a set of documents $D={d_1, \cdots, d_n}$
+output: improve engagement
+tasks:
+    1. design an algorithm to (a) generate informative sentences $S_i={s_1^i, \cdots, s_m^i}$, with $|s_{j}^i|<=k$, $|S_i|=L$ from each $d_i$, and (b) maximize $\sum_{i=1, \cdots, L}$ interactions $(s_j^i)$ with users.   we have to consider (a) importance of the sentence, also (b) diversity, and (c) design a translation model to generate the informative sentences from the original text.
+    2. who to @, in order to maximize the network interactions. we need to consider (a) network (b) matching degree between @user and selected $s_j^i$, with a budget of the number @users.
+   3. when someone poses some questions/messages, how to respond? (a) select the most important (original) sentences from the document -- ranking problem? -- evaluation -- more interactions or click. If all selected sentences  are below a threshold, then give up to respond.
+
+eval:
+  1. -- count interactions. compare with baselines.
+  2. -- compare with no @. compare with baseline to match.
+  3. -- compare with baselines.
+
+Algorithms:
+  1. jointly seq-to-seq model, learned from news and papers together.
+  2. ap--importance
+  3. set-cover
+  4. matching: given a keyword/query, return the most similar sentences.
+
+data: 
+  1. pdf
